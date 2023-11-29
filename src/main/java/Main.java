@@ -1,4 +1,4 @@
-public class Main{
+public class Main {
 
     /*
      ***********************************************
@@ -16,5 +16,17 @@ public class Main{
      */
     private static void handle(String cmdLine) {
         System.out.println(cmdLine);
+
+        String[] cmd = cmdLine.trim().split(" ");
+        String cmdName = cmd[0];
+
+        ContactManager manager = new ContactManager();
+        switch (cmdName) {
+            case "ADD":
+                manager.addContact(new Contact(cmd[1], cmd[2]));
+                break;
+            default:
+                break;
+        }
     }
 }
