@@ -26,11 +26,6 @@ This is a skeleton project structure which will help you start solving the probl
 - Ant task have already been configured for you.
 - Run `ant dist` to generate the `dist.jar` file. This can be found inside `dist/lib/` folder.
 
-## Checking for correctness 
-
-- You can simply opt to do a `Geektrust > Run Tests` from the editor menu, which will run your solution against some preconfigured inputs and show you the output.
-- If you want to build & run the `dist.jar` file from the terminal to check against custom inputs see [Running the dist.jar file](#running-the-distjar-file) section.
-
 ## Running the dist.jar file 
 
 - After building your solution as per [How to build your solution](#how-to-build-your-solution) you can now run the `dist.jar` against inputs. 

@@ -1,32 +1,29 @@
 public class Main {
 
-    /*
-     ***********************************************
-     * This is the driver code. Don't change it!!!
-     * *********************************************
+    /**
+     * Calculates the discounted price of a product.
+     *
+     * @param price    The original price of the product.
+     * @param discount The discount rate (e.g., 0.20 for a 20% discount).
+     * @return The discounted price.
      */
-    public static void main(String[] args){
-        for (String cmd : args) {
-            handle(cmd);
-        }
+    public static double applyDiscount(double price, double discount) {
+        return price * (1 - discount);
     }
 
-    /*
-     * Edit this to start handling the commands.
-     */
-    private static void handle(String cmdLine) {
-        System.out.println(cmdLine);
+    public static void main(String[] args) {
+        // Array of products, each represented by {price, discount rate}
+        double[][] products = {{100.0, 0.10}, {200.0, 0.20}, {300.0, 0.30}};
+        double totalDiscountedPrice = 0.0;
 
-        String[] cmd = cmdLine.trim().split(" ");
-        String cmdName = cmd[0];
-
-        ContactManager manager = new ContactManager();
-        switch (cmdName) {
-            case "ADD":
-                manager.addContact(new Contact(cmd[1], cmd[2]));
-                break;
-            default:
-                break;
+        for (int i = 0; i < products.length; i++) {
+            for (int j = 0; i < products[i].length; j++) {
+                double originalPrice = products[i][0];
+                double discountRate = products[i][1];
+                totalDiscountedPrice += applyDiscount(originalPrice, discountRate);
+            }
         }
+
+        System.out.println("Total Discounted Price: " + totalDiscountedPrice);
     }
 }
