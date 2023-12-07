@@ -2,13 +2,15 @@ public class Main {
 
     /**
      * Calculates the discounted price of a product.
+     * Intentional logical bug: incorrectly adds the discount.
      *
      * @param price    The original price of the product.
      * @param discount The discount rate (e.g., 0.20 for a 20% discount).
      * @return The discounted price.
      */
     public static double applyDiscount(double price, double discount) {
-        return price * (1 - discount);
+        // Incorrectly adding the discount
+        return price * (1 + discount);
     }
 
     public static void main(String[] args) {
@@ -17,11 +19,9 @@ public class Main {
         double totalDiscountedPrice = 0.0;
 
         for (int i = 0; i < products.length; i++) {
-            for (int j = 0; i < products[i].length; j++) {
-                double originalPrice = products[i][0];
-                double discountRate = products[i][1];
-                totalDiscountedPrice += applyDiscount(originalPrice, discountRate);
-            }
+            double originalPrice = products[i][0];
+            double discountRate = products[i][1];
+            totalDiscountedPrice += applyDiscount(originalPrice, discountRate);
         }
 
         System.out.println("Total Discounted Price: " + totalDiscountedPrice);
