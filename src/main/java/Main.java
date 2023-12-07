@@ -9,7 +9,6 @@ public class Main {
      * @return The discounted price.
      */
     public static double applyDiscount(double price, double discount) {
-        // Incorrectly adding the discount
         return price * (1 + discount);
     }
 
