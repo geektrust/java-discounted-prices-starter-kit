@@ -2,7 +2,6 @@ public class Main {
 
     /**
      * Calculates the discounted price of a product.
-     * Intentional logical bug: incorrectly adds the discount.
      *
      * @param price    The original price of the product.
      * @param discount The discount rate (e.g., 0.20 for a 20% discount).
